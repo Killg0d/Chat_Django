@@ -36,8 +36,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'daphne',
+        # added to use asgi communications
     'django.contrib.staticfiles',
+    
+    'channels',
+        # added to use websockets for realtime communication 
 ]
+
+ASGI_APPLICATION = 'chatbot.asgi.application'   
+    # added asgi 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,3 +129,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
